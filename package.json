@@ -1,0 +1,27 @@
+{
+  "name": "pi-find-your-llama",
+  "version": "0.1.0",
+  "description": "A pi extension to detect and add local, running models to your pi coding agent.",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "ollama",
+    "find",
+    "llama.cpp",
+    "llama"
+  ],
+  "files": [
+    "findLlama.ts",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./findLlama.ts"
+    ]
+  }
+}
