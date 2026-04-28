@@ -21,6 +21,10 @@ export default function (pi: ExtensionAPI) {
 
     const models = await client.models.list();
 
+    if (!models.data || models.data.length === 0) {
+      throw new Error("No models found from the API");
+    }
+
     const modelDetails = models.data.map(({ id, owned_by }) => ({
       id,
       owned_by: convertOwnerName(owned_by),
@@ -36,16 +40,25 @@ export default function (pi: ExtensionAPI) {
   }
 
   async function listModelsUI(ctx: ExtensionContext) {
-    const modelList = await getModelDetails();
-    const modelUIList = await formatModelsForUI();
-    const selectedModel = await ctx.ui.select("Available models", modelUIList);
+    try {
 
-    if (!selectedModel) {
-      ctx.ui.notify("Cancelled.", "warning");
-      return;
+      const modelList = await getModelDetails();
+      const modelUIList = await formatModelsForUI();
+      const selectedModel = await ctx.ui.select("Available models", modelUIList);
+      
+      if (!selectedModel) {
+        ctx.ui.notify("Cancelled.", "warning");
+        return;
+      }
+      
+      return modelList.find((model) => selectedModel.includes(model.id));
+    } catch (error) {
+      ctx.ui.notify(
+        "Could not find models. Make sure your local API is running and accessible at localhost:8080.",
+        "error",
+      );
+      throw error;
     }
-
-    return modelList.find((model) => selectedModel.includes(model.id));
   }
 
   function convertOwnerName(owner: string) {
@@ -128,7 +141,7 @@ export default function (pi: ExtensionAPI) {
   pi.registerShortcut("ctrl+shift+l", {
     description: "Find local models and add them to the pi config",
     handler: async (ctx) => {
-      handleFindModelShortcut(ctx);
+      await handleFindModelShortcut(ctx);
     },
   });
 
