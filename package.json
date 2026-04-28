@@ -1,6 +1,6 @@
 {
   "name": "pi-find-your-llama",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A pi extension to detect and add local, running models to your pi coding agent.",
   "license": "MIT",
   "type": "module",
@@ -23,5 +23,9 @@
     "extensions": [
       "./findLlama.ts"
     ]
+  },
+  "dependencies": {
+    "openai": "^6.34.0",
+    "zod": "^4.3.6"
   }
 }
