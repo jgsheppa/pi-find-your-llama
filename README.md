@@ -12,7 +12,7 @@ pi install https://github.com/jgsheppa/pi-find-your-llama
 For local development from this checkout:
 
 ```
-pi -e ./findLlama.ts
+pi -e ./src/index.ts
 ```
 
 Or install this directory as a local pi package:
@@ -27,8 +27,12 @@ pi install .
 
 `/find-llama` — fallback command for terminals that intercept Ctrl+Shift+L.
 
-## Notes
-- Make sure localhost:8080 is not being used by other applications
-- Only running models will be detected
 
+
+## Decision Tree
+
+Possible starting states:
+
+1. New Provider
+2. Existing Provider
 
