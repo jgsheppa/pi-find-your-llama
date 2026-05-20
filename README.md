@@ -1,7 +1,7 @@
 # pi-find-your-llama
-A [pi](https://pi.dev/) extension to add a running, local model to your pi config.
+A [pi](https://pi.dev/) extension to add or edit a local models for your `pi` config.
 
-Press `Ctrl+Shift+L` or run `/find-llama` to detect models running locally and add them to your `models.json` config file.
+Press `Ctrl+Shift+L` or run `/find-llama` to detect local models and add or edit them in your `models.json` config file.
 
 ## Install
 
@@ -29,10 +29,5 @@ pi install .
 
 
 
-## Decision Tree
 
-Possible starting states:
-
-1. New Provider
-2. Existing Provider
 
