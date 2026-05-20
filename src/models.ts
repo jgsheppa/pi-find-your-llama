@@ -2,7 +2,7 @@ import type {
 	ExtensionContext,
 	ProviderConfig,
 	ProviderModelConfig,
-} from "@mariozechner/pi-coding-agent";
+} from "@earendil-works/pi-coding-agent";
 import { loadModelConfig, saveModelConfig } from "./config";
 import { filterInputTypes, type ModelInputType } from "./types";
 import { multiSelect } from "./ui";

@@ -1,4 +1,4 @@
-import type { ExtensionContext } from "@mariozechner/pi-coding-agent";
+import type { ExtensionContext } from "@earendil-works/pi-coding-agent";
 import { withOpenAIConfig } from "../config";
 import { registerModel } from "../models";
 import { listModelsUI } from "../ui";

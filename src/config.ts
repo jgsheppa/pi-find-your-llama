@@ -4,7 +4,7 @@ import { dirname, join } from "node:path";
 import type {
 	ProviderConfig,
 	ProviderModelConfig,
-} from "@mariozechner/pi-coding-agent";
+} from "@earendil-works/pi-coding-agent";
 import type { EditableField, ModelInputType, Provider } from "./types";
 
 const MODEL_CONFIG_LOCATION = join(homedir(), ".pi/agent/models.json");

@@ -2,7 +2,7 @@ import type {
 	ExtensionContext,
 	ProviderConfig,
 	ProviderModelConfig,
-} from "@mariozechner/pi-coding-agent";
+} from "@earendil-works/pi-coding-agent";
 import { getModelDetails } from "./models";
 import { type EditableField, filterInputTypes } from "./types";
 

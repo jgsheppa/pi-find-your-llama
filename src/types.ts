@@ -1,4 +1,4 @@
-import type { ProviderConfig } from "@mariozechner/pi-coding-agent";
+import type { ProviderConfig } from "@earendil-works/pi-coding-agent";
 
 export type Provider = {
 	providers: Record<string, ProviderConfig>;

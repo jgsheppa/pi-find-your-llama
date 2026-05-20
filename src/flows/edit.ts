@@ -1,7 +1,7 @@
 import type {
 	ExtensionContext,
 	ProviderModelConfig,
-} from "@mariozechner/pi-coding-agent";
+} from "@earendil-works/pi-coding-agent";
 import { applyFieldValue, loadModelConfig, saveModelConfig } from "../config";
 import type { Provider } from "../types";
 import { getFieldOptions, promptForFieldValue } from "../ui";
