@@ -32,7 +32,8 @@ export async function handleEditModelFlow(ctx: ExtensionContext) {
 	}
 
 	const providerOptions = providerEntries.map(
-		({ providerName, modelCount }) => `${providerName} (${modelCount} models)`,
+		({ providerName, modelCount }) =>
+			`${providerName} (${modelCount} ${modelCount === 1 ? "model" : "models"})`,
 	);
 
 	const selectedProvider = await ctx.ui.select(
@@ -45,7 +46,10 @@ export async function handleEditModelFlow(ctx: ExtensionContext) {
 		return;
 	}
 
-	const providerName = selectedProvider.replace(/ \(\d+ models\)$/, "");
+	const providerName = selectedProvider.replace(
+		/ \(\d+ ${selectedProvider.includes("model") ? "model" : "models"}\)$/,
+		"",
+	);
 	const providerConfig = config.providers[providerName];
 	const models: ProviderModelConfig[] = providerConfig.models ?? [];
 
